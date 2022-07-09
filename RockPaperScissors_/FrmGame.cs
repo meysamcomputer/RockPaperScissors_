@@ -73,8 +73,11 @@ namespace RockPaperScissors_
         private void Play(int A_status, int B_Status)
         {
 
-            Pb_PlayerA.Image = Image.FromFile(@"Resources\images\" + A_status.ToString() + ".jpg");
-            Pb_PlayerB.Image = Image.FromFile(@"Resources\images\" + B_Status.ToString() + ".jpg");
+            Pb_PlayerA.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, @"Resources\images\", A_status.ToString() + ".jpg"));
+            Pb_PlayerB.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, @"Resources\images\", B_Status.ToString() + ".jpg"));
+
+            //Pb_PlayerA.Image = Image.FromFile(@"Resources\images\" + A_status.ToString() + ".jpg");
+            //Pb_PlayerB.Image = Image.FromFile(@"Resources\images\" + B_Status.ToString() + ".jpg");
 
             var res = States.Where(x => x.A_Status == A_status && x.B_Status == B_Status).FirstOrDefault();
 
@@ -120,15 +123,15 @@ namespace RockPaperScissors_
             }
 
             SetGridViewResult();
-            int  EqualA = Results.Where(x => x.A_Result == 1).Count();
+            int EqualA = Results.Where(x => x.A_Result == 1).Count();
             int winA = Results.Where(x => x.A_Result == 2).Count();
             int lostA = Results.Where(x => x.A_Result == 3).Count();
 
             int EqualB = Results.Where(x => x.B_Result == 1).Count();
-            int winB= Results.Where(x => x.B_Result == 2).Count();
+            int winB = Results.Where(x => x.B_Result == 2).Count();
             int lostB = Results.Where(x => x.B_Result == 3).Count();
-            SUM_ResA.Text = "Equal="+ EqualA.ToString() + ",Win="+  winA.ToString() + ",Lost="+ lostA.ToString() + "";
-            SUM_ResB.Text = "Equal="+ EqualB.ToString() + ",Win="+ winB.ToString() + ",Lost="+lostB.ToString() + "";
+            SUM_ResA.Text = "Equal=" + EqualA.ToString() + ",Win=" + winA.ToString() + ",Lost=" + lostA.ToString() + "";
+            SUM_ResB.Text = "Equal=" + EqualB.ToString() + ",Win=" + winB.ToString() + ",Lost=" + lostB.ToString() + "";
         }
         /// <summary>
         /// show Result in Gridview

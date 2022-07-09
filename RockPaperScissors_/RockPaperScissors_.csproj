@@ -9,13 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="bin\Debug\net6.0-windows\Resources\**" />
-    <EmbeddedResource Remove="bin\Debug\net6.0-windows\Resources\**" />
-    <None Remove="bin\Debug\net6.0-windows\Resources\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="bin\Debug\net6.0-windows\" />
+    <Content Include="bin\Debug\net6.0-windows\Resources\Images\1.jpg" />
+    <Content Include="bin\Debug\net6.0-windows\Resources\Images\2.jpg" />
+    <Content Include="bin\Debug\net6.0-windows\Resources\Images\3.jpg" />
   </ItemGroup>
 
 </Project>
